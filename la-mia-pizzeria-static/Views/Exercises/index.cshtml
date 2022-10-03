@@ -3,7 +3,37 @@
     ViewData["Title"] = "index";
     string myName = "Daniele";
     string myLastName = "Ciccarelli";
+
+    int getSum(int num)
+    {
+        int sum = 0;
+        for (int i = 0; i <= num; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+
+    int charCount (string phrase, char ch)
+    {
+        int freq = phrase.Count(f => (f == ch));
+        return(freq);
+    }
 }
+@*1. Dichiarare una variabile valorizzandola con il nostro nome.
+Dichiarare un'altra variabile valorizzandola con il nostro cognome.
+Stampare il nostro nome e cognome all'interno di un tag h2.*@
+<h3>ESERCIZIO 1:</h3>
+<h1 class="">@myName + @myLastName</h1>
+<h2 class="mb-3">--------------------------------------------------------------</h2>
 
-<h1>@myName + @myLastName</h1>
+@*2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+Stampare dentro uno span il risultato.*@
+<h3>ESERCIZIO 2:</h3>
+<span>@getSum(20)</span>
+<h2 class="mb-3">--------------------------------------------------------------</h2>
 
+@*3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina*@
+<h3>ESERCIZIO 3:</h3>
+<span>@charCount("nel mezzo del cammin di nostra vita", 'a')</span>
+<h2 class="mb-3">--------------------------------------------------------------</h2>
