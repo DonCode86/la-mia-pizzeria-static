@@ -26,6 +26,9 @@
         int num = new Random().Next(1, 90);
         if (!nums.Contains(num)) nums.Add(num);
     }
+
+    string Date = DateTime.Now.ToString("yyy-MM-dd HH:mm:ss");
+    DateTime currentDate = DateTime.Now;
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 @*1. Dichiarare una variabile valorizzandola con il nostro nome.
@@ -58,3 +61,19 @@ Stampare dentro uno span il risultato.*@
         </div>   
     }
 }
+<h2 class="mb-3">--------------------------------------------------------------</h2>
+
+@*5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) 
+con il formato anno-mese-giorno ore:minuti:secondi*@
+
+<h3>Data ed ora attuale: @Date</h3>
+
+@*6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina
+a. la data di 7 giorni fa
+b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)*@
+
+<h3>La data di 7 giorni fà è @currentDate.AddDays(-7).ToString("yyyy-MM-dd")</h3>
+<h3>Oggi e' il giorno: @currentDate.ToString("dddd")</h3>
+<h3>Tra un anno sarà: @currentDate.AddYears(1).ToString("dddd")</h3>
+
